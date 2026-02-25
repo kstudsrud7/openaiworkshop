@@ -66,7 +66,7 @@ export const AgentEvent = ({ agentId, agentData, isActive }) => {
           </Box>
         )}
         {/* Agent message */}
-        <Card variant="outlined" sx={{ bgcolor: '#fff3e0' }}>
+        <Card variant="outlined" sx={{ bgcolor: 'background.default', borderColor: 'divider' }}>
           <CardContent sx={{ p: 1.5, '&:last-child': { pb: 1.5 } }}>
             <Typography variant="body2" sx={{ whiteSpace: 'pre-wrap' }}>
               {agentData.finalMessage || agentData.tokens.join('')}

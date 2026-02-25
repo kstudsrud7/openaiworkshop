@@ -48,19 +48,19 @@ export const AppHeader = ({
   onToggleInternalProcess,
 }) => {
   return (
-    <AppBar position="static">
-      <Toolbar>
+    <AppBar position="static" elevation={0}>
+      <Toolbar sx={{ gap: 1.5, minHeight: 72 }}>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          🤖 Magentic AI Assistant
+          S7-style AI Assistant
         </Typography>
 
         {isAuthEnabled && (
           isSignedIn ? (
-            <Button color="inherit" onClick={onSignOut} sx={{ mr: 2 }}>
+            <Button color="inherit" variant="outlined" onClick={onSignOut} sx={{ borderColor: 'rgba(255,255,255,0.35)' }}>
               Sign out {account?.username ? `(${account.username})` : ''}
             </Button>
           ) : (
-            <Button color="inherit" onClick={onSignIn} disabled={!authConfigLoaded} sx={{ mr: 2 }}>
+            <Button color="inherit" variant="outlined" onClick={onSignIn} disabled={!authConfigLoaded} sx={{ borderColor: 'rgba(255,255,255,0.35)' }}>
               Sign in
             </Button>
           )
@@ -77,7 +77,11 @@ export const AppHeader = ({
           color="inherit"
           onClick={onNewSession}
           startIcon={<AddIcon />}
-          sx={{ mr: 2 }}
+          variant="contained"
+          sx={{
+            bgcolor: 'primary.main',
+            '&:hover': { bgcolor: 'primary.dark' },
+          }}
           disabled={!canInteract}
         >
           New Session
@@ -86,6 +90,7 @@ export const AppHeader = ({
         <IconButton
           color="inherit"
           onClick={onToggleInternalProcess}
+          sx={{ border: '1px solid rgba(255,255,255,0.25)' }}
         >
           {showInternalProcess ? <VisibilityOffIcon /> : <VisibilityIcon />}
         </IconButton>

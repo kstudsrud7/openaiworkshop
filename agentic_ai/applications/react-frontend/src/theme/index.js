@@ -8,14 +8,96 @@ export const theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#1976d2',
+      main: '#0c72b6',
+      dark: '#085a91',
+      light: '#5aa6d6',
     },
     secondary: {
-      main: '#dc004e',
+      main: '#1e293b',
+    },
+    info: {
+      main: '#0c72b6',
+    },
+    success: {
+      main: '#2f855a',
+    },
+    warning: {
+      main: '#b7791f',
+    },
+    text: {
+      primary: '#0f172a',
+      secondary: '#334155',
     },
     background: {
-      default: '#f5f5f5',
+      default: '#f8fafc',
       paper: '#ffffff',
+    },
+    divider: '#e2e8f0',
+  },
+  shape: {
+    borderRadius: 12,
+  },
+  typography: {
+    fontFamily: 'Manrope, Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif',
+    h5: {
+      fontWeight: 700,
+      letterSpacing: '-0.01em',
+    },
+    h6: {
+      fontWeight: 700,
+    },
+    button: {
+      textTransform: 'none',
+      fontWeight: 600,
+    },
+  },
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        '@import':
+          "url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap')",
+        body: {
+          backgroundColor: '#f8fafc',
+          color: '#0f172a',
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          border: '1px solid #e2e8f0',
+          boxShadow: '0 8px 28px rgba(15, 23, 42, 0.06)',
+        },
+      },
+    },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: '#0f172a',
+          backgroundImage:
+            'linear-gradient(90deg, rgba(15,23,42,1) 0%, rgba(30,41,59,1) 70%, rgba(12,114,182,0.95) 100%)',
+        },
+      },
+    },
+    MuiAccordion: {
+      styleOverrides: {
+        root: {
+          border: '1px solid #e2e8f0',
+          borderRadius: 10,
+          overflow: 'hidden',
+          boxShadow: 'none',
+          '&:before': {
+            display: 'none',
+          },
+        },
+      },
+    },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          fontWeight: 600,
+        },
+      },
     },
   },
 });
@@ -24,21 +106,21 @@ export const theme = createTheme({
  * Event type colors for orchestrator events
  */
 export const eventColors = {
-  instruction: { bgColor: '#f3e5f5', color: 'secondary' },
-  task_ledger: { bgColor: '#e3f2fd', color: 'info' },
-  user_task: { bgColor: '#f5f5f5', color: 'default' },
-  notice: { bgColor: '#fff3e0', color: 'warning' },
-  plan: { bgColor: '#e3f2fd', color: 'primary' },
-  progress: { bgColor: '#e1f5fe', color: 'info' },
-  result: { bgColor: '#e8f5e9', color: 'success' },
-  default: { bgColor: '#f5f5f5', color: 'default' },
+  instruction: { bgColor: '#eff6ff', color: 'secondary' },
+  task_ledger: { bgColor: '#e0f2fe', color: 'info' },
+  user_task: { bgColor: '#f8fafc', color: 'default' },
+  notice: { bgColor: '#fefce8', color: 'warning' },
+  plan: { bgColor: '#e0f2fe', color: 'primary' },
+  progress: { bgColor: '#eef2ff', color: 'info' },
+  result: { bgColor: '#ecfdf3', color: 'success' },
+  default: { bgColor: '#f8fafc', color: 'default' },
 };
 
 /**
  * Message background colors
  */
 export const messageColors = {
-  user: '#e3f2fd',
+  user: '#e0f2fe',
   assistant: '#ffffff',
-  error: '#ffebee',
+  error: '#fef2f2',
 };

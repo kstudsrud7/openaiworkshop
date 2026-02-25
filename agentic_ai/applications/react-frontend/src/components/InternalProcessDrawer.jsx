@@ -45,16 +45,19 @@ export const InternalProcessDrawer = ({
       anchor="left"
       open={open}
       sx={{
-        width: open ? 400 : 0,
+        width: open ? 420 : 0,
         flexShrink: 0,
         '& .MuiDrawer-paper': {
-          width: 400,
+          width: 420,
           boxSizing: 'border-box',
+          bgcolor: 'background.paper',
+          borderRight: 1,
+          borderColor: 'divider',
         },
       }}
     >
       <Toolbar />
-      <Box sx={{ p: 2, overflow: 'auto', height: '100%' }}>
+      <Box sx={{ p: 2.5, overflow: 'auto', height: '100%' }}>
         <Typography variant="h6" gutterBottom sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <BrainIcon color="primary" />
           Internal Process

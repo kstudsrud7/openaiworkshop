@@ -18,7 +18,7 @@ import {
  */
 export const AgentSelector = ({ agents, currentAgent, onChange, disabled }) => {
   return (
-    <FormControl sx={{ minWidth: 250, mr: 2 }} size="small">
+    <FormControl sx={{ minWidth: 260 }} size="small">
       <InputLabel id="agent-select-label" sx={{ color: 'white' }}>
         Active Agent
       </InputLabel>
@@ -30,11 +30,12 @@ export const AgentSelector = ({ agents, currentAgent, onChange, disabled }) => {
         disabled={disabled}
         sx={{
           color: 'white',
+          borderRadius: 2,
           '.MuiOutlinedInput-notchedOutline': {
-            borderColor: 'rgba(255, 255, 255, 0.3)',
+            borderColor: 'rgba(255, 255, 255, 0.35)',
           },
           '&:hover .MuiOutlinedInput-notchedOutline': {
-            borderColor: 'rgba(255, 255, 255, 0.5)',
+            borderColor: 'rgba(255, 255, 255, 0.6)',
           },
           '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
             borderColor: 'white',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Paper, Typography } from '@mui/material';
+import { Paper, Typography } from '@mui/material';
 import ReactMarkdown from 'react-markdown';
 import { messageColors } from '../theme/index.js';
 
@@ -17,12 +17,13 @@ export const ChatMessage = ({ message }) => {
   return (
     <Paper
       sx={{
-        p: 2,
-        mb: 2,
+        p: 2.25,
+        mb: 2.25,
         bgcolor: backgroundColor,
+        borderRadius: 2,
       }}
     >
-      <Typography variant="caption" color="text.secondary" gutterBottom display="block">
+      <Typography variant="caption" color="text.secondary" gutterBottom display="block" sx={{ mb: 1 }}>
         {roleLabel} • {timestamp.toLocaleTimeString()}
       </Typography>
       <ReactMarkdown>{content}</ReactMarkdown>

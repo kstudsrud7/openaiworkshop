@@ -228,9 +228,7 @@ function AppContent() {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Box sx={{ display: 'flex', height: '100vh' }}>
+    <Box sx={{ display: 'flex', height: '100vh', bgcolor: 'background.default' }}>
         {/* Internal Process Drawer */}
         <InternalProcessDrawer
           open={showInternalProcess}
@@ -266,18 +264,25 @@ function AppContent() {
             sx={{
               flexGrow: 1,
               overflow: 'auto',
-              p: 3,
+              p: { xs: 2, md: 3 },
               bgcolor: 'background.default',
             }}
           >
-            <Container maxWidth="md">
+            <Container maxWidth="lg">
               {chat.messages.length === 0 && (
-                <Paper sx={{ p: 4, textAlign: 'center', bgcolor: 'background.paper' }}>
+                <Paper
+                  sx={{
+                    p: { xs: 3, md: 5 },
+                    textAlign: 'center',
+                    bgcolor: 'background.paper',
+                    borderRadius: 3,
+                  }}
+                >
                   <Typography variant="h5" gutterBottom>
-                    Welcome! 👋
+                    From Complexity to Clarity in AI & Data
                   </Typography>
                   <Typography color="text.secondary">
-                    I'm a multi-agent AI assistant. Ask me about customer accounts, billing, promotions, or security.
+                    Ask your assistant to analyze workflows, break work into specialist agents, and deliver clear recommendations.
                   </Typography>
                 </Paper>
               )}
@@ -293,12 +298,13 @@ function AppContent() {
           {/* Input Area */}
           <Paper
             sx={{
-              p: 2,
+              p: { xs: 1.5, md: 2 },
               borderTop: 1,
               borderColor: 'divider',
+              borderRadius: 0,
             }}
           >
-            <Container maxWidth="md">
+            <Container maxWidth="lg">
               <ChatInput
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
@@ -311,7 +317,6 @@ function AppContent() {
           </Paper>
         </Box>
       </Box>
-    </ThemeProvider>
   );
 }
 
